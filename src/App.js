@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import ListPage from "./components/ListPage";
+import DetailPage from "./components/DetailPage";
 import "./css/style.scss";
 
 function App() {
@@ -11,7 +12,12 @@ function App() {
           path="/"
           element={<ListPage />}
         />
-        {/* <Route path="/:id" component={DetailPage} /> */}
+        <Route
+          path="/:id"
+          render={props => (
+            <DetailPage {...props} />
+          )}
+        />
       </Routes>
     </div>
   );

@@ -46,7 +46,12 @@ function ListPage({
       ) : list.length > 0 ? (
         list.map(el => (
           <li key={el.id}>
-            <Link to="#">
+            <Link
+              to={{
+                pathname: `/${el.name}`,
+                state: { data: el },
+              }}
+            >
               <span>
                 <strong>{el.name}</strong>
                 <small>{el.owner.login}</small>
